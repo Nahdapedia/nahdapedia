@@ -1,0 +1,163 @@
+backend:
+  name: github
+  repo: bassio/nahdapedia
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      
+  - name: "musicalwork"
+    label: "Musical Works"
+    label_singular: "Musical Work"
+    folder: "site/data/musicalwork"
+    extension: "json"
+    format: "json"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title (Ar)", name: "title_ar", widget: "string"}
+      - {label: "Alternate Titles", name: "alternate_titles", widget: "list", allow_add: true,
+            field: {label: "Alternate Title", name: "alt_title", widget: "string"}
+         }
+      - {label: "Lyrics", name: "lyrics", widget: "text"}
+      - {label: "Genre", name: "genre", widget: "relation",
+         collection: "genre", 
+         searchFields: ["name"],
+         valueField: "name",
+         displayFields: ["name"],
+         multiple: false
+         }
+      - {label: "Contributors",
+         name: "contributors",
+         widget: "list",
+         allow_add: true,
+         fields: [
+            {name: "contributor_role",
+             label: "Role",
+             widget: "select",
+             options: ["Composer", "Writer"]
+            },
+            {name: "contributor",
+             label: "Contributor",
+             widget: "relation",
+             collection: "agent", 
+             searchFields: ["name"],
+             valueField: "name",
+             displayFields: ["name"]}
+             ]
+         }
+         
+  - name: "genre"
+    label: "Genres"
+    label_singular: "Genre"
+    folder: "site/data/genre"
+    extension: "json"
+    format: "json"
+    create: true
+    identifier_field: "name"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Name (Ar)", name: "name_ar", widget: "string"}
+
+  - name: "agent"
+    label: "Agents"
+    label_singular: "Agent"
+    folder: "site/data/agent"
+    extension: "json"
+    format: "json"
+    create: true
+    identifier_field: "name"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Name (Ar)", name: "name_ar", widget: "string"}
+      - {label: "Alternate Names", name: "alternate_names", widget: "list", allow_add: true,
+            field: {label: "Alternate Name", name: "alt_name", widget: "string"}
+         }
+      - {name: "usual_role",
+         label: "Usual Role",
+         widget: "select",
+         options: ["Artist", "Composer", "Conductor", "Musician", "Performer", "Performing Group", "Recording Engineer", "Vocalist", "Writer"]
+         }
+         
+  - name: "release"
+    label: "Releases"
+    label_singular: "Release"
+    folder: "site/data/release"
+    extension: "json"
+    format: "json"
+    create: true
+    fields:
+      - {label: "Title of Release", name: "title", widget: "string"}
+      - {label: "Label", name: "label", widget: "string"}
+      - {label: "Catalogue Numbers", label_singular: "Catalogue Number", name: "catalogue_numbers", widget: "list", allow_add: true,
+            field: {label: "Catalogue Number", name: "catalogue_number", widget: "string"}
+         }
+      - {label: "Release Type", name: "release_type", widget: "select", default: "Commercial", options: ["Commercial", "Prova"]}
+      - {label: "Record Count", name: "record_count", widget: "number", default: 1, valueType: "int"}
+      - {label: "Media Type",
+         name: "media_type",
+         widget: "select",
+         default: 1,
+         options: ["Shellac disc [10 inch]",
+                   "Shellac disc [12 inch]",
+                   "Vinyl recording",
+                   "Wax Cylinder"]
+                   }
+      - {label: "Artist", name: "artist", widget: "relation",
+         collection: "agent", 
+         searchFields: ["name"],
+         valueField: "name",
+         displayFields: ["name"],
+         multiple: true
+         }
+         
+  - name: "track"
+    label: "Tracks"
+    label_singular: "Track"
+    folder: "site/data/track"
+    extension: "json"
+    format: "json"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Record Side", name: "record_side", widget: "string"}
+      - {label: "Track Number", name: "track_number", multiple: true, widget: "string"}
+      - {label: "Musical Work",
+         name: "work",
+         widget: "relation",
+         collection: "musicalwork", 
+         searchFields: ["genre", "name"],
+         valueField: "name",
+         displayFields: ["genre", "name"]
+         }
+      - {label: "Artists and Contributors",
+         name: "contributors",
+         widget: "list",
+         allow_add: true,
+         fields: [
+            {name: "contributor_role",
+             label: "Role",
+             widget: "select",
+             options: ["Artist", "Composer", "Conductor", "Musician", "Performer", "Performing Group", "Recording Engineer", "Vocalist", "Writer"]
+            },
+            {name: "contributor",
+             label: "Contributor",
+             widget: "relation",
+             collection: "agent", 
+             searchFields: ["name"],
+             valueField: "name",
+             displayFields: ["name"]}
+             ]
+         }
+         
