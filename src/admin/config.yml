@@ -187,11 +187,11 @@ collections:
              displayFields: ["name"]}
              ]
          }
-         
+
   - name: "reference"
     label: "References"
     label_singular: "Reference"
+    fields:
       - {label: "id", name: "id", widget: "uuid"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "BibTeX entry", name: "bibtex", widget: "text"}
-      
