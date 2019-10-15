@@ -191,6 +191,10 @@ collections:
   - name: "reference"
     label: "References"
     label_singular: "Reference"
+    folder: "src/data/reference"
+    extension: "json"
+    format: "json"
+    create: true
     fields:
       - {label: "id", name: "id", widget: "uuid"}
       - {label: "Title", name: "title", widget: "string"}
