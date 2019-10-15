@@ -25,6 +25,7 @@ collections:
     format: "json"
     create: true
     fields:
+      - {label: "id", name: "id", widget: "uuid"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Title (Ar)", name: "title_ar", widget: "string"}
       - {label: "Alternate Titles", name: "alternate_titles", widget: "list", allow_add: true,
@@ -53,11 +54,33 @@ collections:
              widget: "relation",
              collection: "agent", 
              searchFields: ["name"],
-             valueField: "name",
+             valueField: "id",
              displayFields: ["name"]}
              ]
          }
-         
+      - {label: "Citations",
+         name: "citations",
+         widget: "list",
+         allow_add: true,
+         fields: [
+            {name: "footnote_number",
+             label: "Footnote number",
+             widget: "number",
+            },
+            {name: "citation_comment",
+             label: "Citation Comment",
+             widget: "text",
+            },
+            {name: "citation_reference",
+             label: "Citation Reference",
+             widget: "relation",
+             collection: "reference", 
+             searchFields: ["title", "bibtex"],
+             valueField: "id",
+             displayFields: ["title"]
+            }
+             ]
+         }
   - name: "genre"
     label: "Genres"
     label_singular: "Genre"
@@ -67,6 +90,7 @@ collections:
     create: true
     identifier_field: "name"
     fields:
+      - {label: "id", name: "id", widget: "uuid"}
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Name (Ar)", name: "name_ar", widget: "string"}
 
@@ -79,6 +103,7 @@ collections:
     create: true
     identifier_field: "name"
     fields:
+      - {label: "id", name: "id", widget: "uuid"}
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Name (Ar)", name: "name_ar", widget: "string"}
       - {label: "Alternate Names", name: "alternate_names", widget: "list", allow_add: true,
@@ -98,6 +123,7 @@ collections:
     format: "json"
     create: true
     fields:
+      - {label: "id", name: "id", widget: "uuid"}
       - {label: "Title of Release", name: "title", widget: "string"}
       - {label: "Label", name: "label", widget: "string"}
       - {label: "Catalogue Numbers", label_singular: "Catalogue Number", name: "catalogue_numbers", widget: "list", allow_add: true,
@@ -117,7 +143,7 @@ collections:
       - {label: "Artist", name: "artist", widget: "relation",
          collection: "agent", 
          searchFields: ["name"],
-         valueField: "name",
+         valueField: "id",
          displayFields: ["name"],
          multiple: true
          }
@@ -130,6 +156,7 @@ collections:
     format: "json"
     create: true
     fields:
+      - {label: "id", name: "id", widget: "uuid"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Record Side", name: "record_side", widget: "string"}
       - {label: "Track Number", name: "track_number", multiple: true, widget: "string"}
@@ -138,7 +165,7 @@ collections:
          widget: "relation",
          collection: "musicalwork", 
          searchFields: ["genre", "name"],
-         valueField: "name",
+         valueField: "id",
          displayFields: ["genre", "name"]
          }
       - {label: "Artists and Contributors",
@@ -156,8 +183,15 @@ collections:
              widget: "relation",
              collection: "agent", 
              searchFields: ["name"],
-             valueField: "name",
+             valueField: "id",
              displayFields: ["name"]}
              ]
          }
          
+  - name: "reference"
+    label: "References"
+    label_singular: "Reference"
+      - {label: "id", name: "id", widget: "uuid"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "BibTeX entry", name: "bibtex", widget: "text"}
+      
