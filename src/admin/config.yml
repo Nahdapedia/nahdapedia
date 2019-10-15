@@ -20,7 +20,7 @@ collections:
   - name: "musicalwork"
     label: "Musical Works"
     label_singular: "Musical Work"
-    folder: "site/data/musicalwork"
+    folder: "src/data/musicalwork"
     extension: "json"
     format: "json"
     create: true
@@ -61,7 +61,7 @@ collections:
   - name: "genre"
     label: "Genres"
     label_singular: "Genre"
-    folder: "site/data/genre"
+    folder: "src/data/genre"
     extension: "json"
     format: "json"
     create: true
@@ -73,7 +73,7 @@ collections:
   - name: "agent"
     label: "Agents"
     label_singular: "Agent"
-    folder: "site/data/agent"
+    folder: "src/data/agent"
     extension: "json"
     format: "json"
     create: true
@@ -93,7 +93,7 @@ collections:
   - name: "release"
     label: "Releases"
     label_singular: "Release"
-    folder: "site/data/release"
+    folder: "src/data/release"
     extension: "json"
     format: "json"
     create: true
@@ -125,7 +125,7 @@ collections:
   - name: "track"
     label: "Tracks"
     label_singular: "Track"
-    folder: "site/data/track"
+    folder: "src/data/track"
     extension: "json"
     format: "json"
     create: true
