@@ -1,7 +1,5 @@
-window.CMS_MANUAL_INIT = true
-
 // Usage with import from npm package
-import CMS, { init } from 'netlify-cms'
+import CMS from 'netlify-cms'
 
 CMS.registerWidget(
       'uuid',
@@ -49,5 +47,3 @@ CMS.registerWidget(
         }
       })
     );
-
-  init()
