@@ -27,13 +27,14 @@ module.exports = {
       options: {
         publicPath: `/admin`
       }
+    }
   ],
   transformers: {
     //Add markdown support to all file-system sources
     remark: {
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-      anchorClassName: 'icon icon-link'
+      anchorClassName: 'icon icon-link',
       plugins: [
         '@gridsome/remark-prismjs'
         // ...global plugins
