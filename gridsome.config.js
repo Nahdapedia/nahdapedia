@@ -5,8 +5,9 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome Blog',
-  siteDescription: 'A simple blog designed with Gridsome',
+  siteName: 'Nahdapedia',
+  siteDescription: 'Nahdapedia',
+  siteUrl: '',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
@@ -28,6 +29,15 @@ module.exports = {
         publicPath: `/admin`,
         modulePath: `src/admin/index.js` //our customized CMS in index.js
       }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Genre',
+        baseDir: './src/data/genre/',
+        path: '*.json',
+        pathPrefix: '/genre'
+      }
     }
   ],
   transformers: {
@@ -42,4 +52,13 @@ module.exports = {
       ]
     }
   },
+  templates: {
+    Genre: [
+        {
+          path: '/genre/:id/:name',
+          component: 'src/templates/Genre.vue'
+        }
+      ]
+  }
+
 }
