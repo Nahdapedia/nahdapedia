@@ -1,17 +1,24 @@
 {
-  "id": "347e71bb-b113-4f6d-8128-a39457157014",
-  "type": "work",
-  "title": "Kadni el-hawa",
-  "title_ar": "كادني الهوا",
   "alternate_titles": [
     "Kādnī el-hawa"
   ],
-  "lyrics": "مذهب: \n\nكادني الهوى وصبحت عليل مثل النسيم في روض الأنس، حِبّي قمر\n\nطالع على غصن، كلّه أدب وطرب وجميل، مالوش مثيل \n\nدور:\n\nللحسن ده بالطبع أميل ياللي تلوم دا شيء بالعقل، وانظر كدا",
   "genre": "dor",
+  "citations": [
+    {
+      "footnote_number": 1,
+      "citation_comment": "Frédéric Lagrange",
+      "citation_reference": "527c49b0-1514-4c4d-b7da-05c1f7241804"
+    }
+  ],
+  "lyrics": "مذهب: \n\nكادني الهوى وصبحت عليل مثل النسيم في روض الأنس، حِبّي قمر\n\nطالع على غصن، كلّه أدب وطرب وجميل، مالوش مثيل \n\nدور:\n\nللحسن ده بالطبع أميل ياللي تلوم دا شيء بالعقل، وانظر كدا",
+  "title": "Kadni el-hawa",
   "contributors": [
     {
       "contributor_role": "Composer",
       "contributor": "0680d88d-cef6-4ac4-9445-d47d1d24cc2e"
     }
-  ]
+  ],
+  "title_ar": "كادني الهوا",
+  "type": "work",
+  "id": "347e71bb-b113-4f6d-8128-a39457157014"
 }
