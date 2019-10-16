@@ -1,6 +1,7 @@
 // Usage with import from npm package
 import CMS from 'netlify-cms'
 
+
 CMS.registerWidget(
       'uuid',
       createClass({

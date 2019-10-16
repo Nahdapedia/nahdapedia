@@ -1,0 +1,544 @@
+[
+  {
+    "name": "posts",
+    "label": "Posts",
+    "label_singular": "Post",
+    "folder": "posts",
+    "create": true,
+    "slug": "{{slug}}",
+    "fields": [
+      {
+        "label": "Title",
+        "name": "title",
+        "widget": "string"
+      },
+      {
+        "label": "Excerpt",
+        "name": "excerpt",
+        "widget": "string"
+      },
+      {
+        "label": "Publish Date",
+        "name": "date",
+        "widget": "date"
+      },
+      {
+        "label": "Body",
+        "name": "body",
+        "widget": "markdown"
+      }
+    ]
+  },
+  {
+    "name": "musicalwork",
+    "label": "Musical Works",
+    "label_singular": "Musical Work",
+    "folder": "static/data/musicalwork",
+    "extension": "json",
+    "format": "json",
+    "create": true,
+    "identifier_field": "title",
+    "slug": "{{fields.id}}",
+    "fields": [
+      {
+        "label": "id",
+        "name": "id",
+        "widget": "uuid"
+      },
+      {
+        "label": "type",
+        "name": "type",
+        "widget": "hidden",
+        "default": "work"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "widget": "string"
+      },
+      {
+        "label": "Title (Ar)",
+        "name": "title_ar",
+        "widget": "string",
+        "required": false
+      },
+      {
+        "label": "Alternate Titles",
+        "name": "alternate_titles",
+        "widget": "list",
+        "allow_add": true,
+        "required": false,
+        "field": {
+          "label": "Alternate Title",
+          "name": "alt_title",
+          "widget": "string"
+        }
+      },
+      {
+        "label": "Lyrics",
+        "name": "lyrics",
+        "widget": "text",
+        "required": false
+      },
+      {
+        "label": "Genre",
+        "name": "genre",
+        "widget": "relation",
+        "collection": "genre",
+        "searchFields": [
+          "name"
+        ],
+        "valueField": "name",
+        "displayFields": [
+          "name"
+        ],
+        "multiple": false
+      },
+      {
+        "label": "Contributors",
+        "name": "contributors",
+        "widget": "list",
+        "allow_add": true,
+        "required": false,
+        "fields": [
+          {
+            "name": "contributor_role",
+            "label": "Role",
+            "widget": "select",
+            "options": [
+              "Composer",
+              "Writer"
+            ]
+          },
+          {
+            "name": "contributor",
+            "label": "Contributor",
+            "widget": "relation",
+            "collection": "agent",
+            "searchFields": [
+              "name"
+            ],
+            "valueField": "id",
+            "displayFields": [
+              "name"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Citations",
+        "name": "citations",
+        "widget": "list",
+        "allow_add": true,
+        "required": false,
+        "fields": [
+          {
+            "name": "footnote_number",
+            "label": "Footnote number",
+            "widget": "number"
+          },
+          {
+            "name": "citation_comment",
+            "label": "Citation Comment",
+            "widget": "text"
+          },
+          {
+            "name": "citation_reference",
+            "label": "Citation Reference",
+            "widget": "relation",
+            "collection": "reference",
+            "fields": [
+              "title",
+              "bibtex"
+            ],
+            "valueField": "id",
+            "displayFields": [
+              "title"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "genre",
+    "label": "Genres",
+    "label_singular": "Genre",
+    "folder": "static/data/genre",
+    "extension": "json",
+    "format": "json",
+    "create": true,
+    "identifier_field": "name",
+    "slug": "{{fields.id}}",
+    "fields": [
+      {
+        "label": "id",
+        "name": "id",
+        "widget": "uuid"
+      },
+      {
+        "label": "type",
+        "name": "type",
+        "widget": "hidden",
+        "default": "genre"
+      },
+      {
+        "label": "Name",
+        "name": "name",
+        "widget": "string"
+      },
+      {
+        "label": "Name (Ar)",
+        "name": "name_ar",
+        "widget": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "agent",
+    "label": "Agents",
+    "label_singular": "Agent",
+    "folder": "static/data/agent",
+    "extension": "json",
+    "format": "json",
+    "create": true,
+    "identifier_field": "name",
+    "slug": "{{fields.id}}",
+    "fields": [
+      {
+        "label": "id",
+        "name": "id",
+        "widget": "uuid"
+      },
+      {
+        "label": "type",
+        "name": "type",
+        "widget": "hidden",
+        "default": "agent"
+      },
+      {
+        "label": "Name",
+        "name": "name",
+        "widget": "string"
+      },
+      {
+        "label": "Name (Ar)",
+        "name": "name_ar",
+        "widget": "string",
+        "required": false
+      },
+      {
+        "label": "Alternate Names",
+        "name": "alternate_names",
+        "widget": "list",
+        "allow_add": true,
+        "required": false,
+        "field": {
+          "label": "Alternate Name",
+          "name": "alt_name",
+          "widget": "string"
+        }
+      },
+      {
+        "name": "usual_role",
+        "label": "Usual Role",
+        "widget": "select",
+        "required": false,
+        "options": [
+          "Artist",
+          "Composer",
+          "Conductor",
+          "Musician",
+          "Performer",
+          "Performing Group",
+          "Recording Engineer",
+          "Vocalist",
+          "Writer"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "label",
+    "label": "Labels",
+    "label_singular": "Label",
+    "folder": "static/data/label",
+    "extension": "json",
+    "format": "json",
+    "create": true,
+    "identifier_field": "name",
+    "slug": "{{fields.id}}",
+    "fields": [
+      {
+        "label": "id",
+        "name": "id",
+        "widget": "uuid"
+      },
+      {
+        "label": "type",
+        "name": "type",
+        "widget": "hidden",
+        "default": "label"
+      },
+      {
+        "label": "Name",
+        "name": "name",
+        "widget": "string"
+      },
+      {
+        "label": "Name (Ar)",
+        "name": "name_ar",
+        "widget": "string",
+        "required": false
+      },
+      {
+        "label": "Alternate Names",
+        "name": "alternate_names",
+        "widget": "list",
+        "allow_add": true,
+        "required": false,
+        "field": {
+          "label": "Alternate Name",
+          "name": "alt_name",
+          "widget": "string"
+        }
+      },
+      {
+        "label": "Label Code (LC)",
+        "name": "lc",
+        "widget": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "release",
+    "label": "Releases",
+    "label_singular": "Release",
+    "folder": "static/data/release",
+    "extension": "json",
+    "format": "json",
+    "create": true,
+    "identifier_field": "title",
+    "slug": "{{fields.id}}",
+    "fields": [
+      {
+        "label": "id",
+        "name": "id",
+        "widget": "uuid"
+      },
+      {
+        "label": "type",
+        "name": "type",
+        "widget": "hidden",
+        "default": "release"
+      },
+      {
+        "label": "Title of Release",
+        "name": "title",
+        "widget": "string"
+      },
+      {
+        "label": "Label",
+        "name": "label",
+        "widget": "relation",
+        "collection": "label",
+        "searchFields": [
+          "name"
+        ],
+        "valueField": "id",
+        "displayFields": [
+          "name",
+          "name_ar"
+        ],
+        "multiple": false
+      },
+      {
+        "label": "Catalogue Numbers",
+        "label_singular": "Catalogue Number",
+        "name": "catalogue_numbers",
+        "widget": "list",
+        "allow_add": true,
+        "field": {
+          "label": "Catalogue Number",
+          "name": "catalogue_number",
+          "widget": "string"
+        }
+      },
+      {
+        "label": "Release Type",
+        "name": "release_type",
+        "widget": "select",
+        "default": "Commercial",
+        "options": [
+          "Commercial",
+          "Prova"
+        ]
+      },
+      {
+        "label": "Record Count",
+        "name": "record_count",
+        "widget": "number",
+        "default": 1,
+        "valueType": "int"
+      },
+      {
+        "label": "Media Type",
+        "name": "media_type",
+        "widget": "select",
+        "options": [
+          "Shellac disc [10 inch]",
+          "Shellac disc [12 inch]",
+          "Vinyl recording",
+          "Wax Cylinder"
+        ]
+      },
+      {
+        "label": "Artist",
+        "name": "artist",
+        "widget": "relation",
+        "collection": "agent",
+        "searchFields": [
+          "name"
+        ],
+        "valueField": "id",
+        "displayFields": [
+          "name"
+        ],
+        "multiple": true
+      }
+    ]
+  },
+  {
+    "name": "track",
+    "label": "Tracks",
+    "label_singular": "Track",
+    "folder": "static/data/track",
+    "extension": "json",
+    "format": "json",
+    "create": true,
+    "identifier_field": "title",
+    "slug": "{{fields.id}}",
+    "fields": [
+      {
+        "label": "id",
+        "name": "id",
+        "widget": "uuid"
+      },
+      {
+        "label": "type",
+        "name": "type",
+        "widget": "hidden",
+        "default": "track"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "widget": "string"
+      },
+      {
+        "label": "Record Side",
+        "name": "record_side",
+        "widget": "string",
+        "required": false
+      },
+      {
+        "label": "Track Number",
+        "name": "track_number",
+        "multiple": true,
+        "widget": "string",
+        "required": false
+      },
+      {
+        "label": "Musical Work",
+        "name": "work",
+        "widget": "relation",
+        "collection": "musicalwork",
+        "searchFields": [
+          "genre",
+          "name"
+        ],
+        "valueField": "id",
+        "displayFields": [
+          "genre",
+          "name"
+        ],
+        "required": false
+      },
+      {
+        "label": "Artists and Contributors",
+        "name": "contributors",
+        "widget": "list",
+        "allow_add": true,
+        "fields": [
+          {
+            "name": "contributor_role",
+            "label": "Role",
+            "widget": "select",
+            "options": [
+              "Artist",
+              "Composer",
+              "Conductor",
+              "Musician",
+              "Performer",
+              "Performing Group",
+              "Recording Engineer",
+              "Vocalist",
+              "Writer"
+            ]
+          },
+          {
+            "name": "contributor",
+            "label": "Contributor",
+            "widget": "relation",
+            "collection": "agent",
+            "searchFields": [
+              "name"
+            ],
+            "valueField": "id",
+            "displayFields": [
+              "name"
+            ],
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "reference",
+        "label": "References",
+        "label_singular": "Reference",
+        "folder": "static/data/reference",
+        "extension": "json",
+        "format": "json",
+        "create": true,
+        "identifier_field": "title",
+        "slug": "{{fields.id}}",
+        "fields": [
+          {
+            "label": "id",
+            "name": "id",
+            "widget": "uuid"
+          },
+          {
+            "label": "type",
+            "name": "type",
+            "widget": "hidden",
+            "default": "reference"
+          },
+          {
+            "label": "Title",
+            "name": "title",
+            "widget": "string"
+          },
+          {
+            "label": "BibTeX entry",
+            "name": "bibtex",
+            "widget": "text",
+            "required": false
+          }
+        ]
+      }
+    ]
+  }
+]
