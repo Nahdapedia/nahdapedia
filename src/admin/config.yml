@@ -20,12 +20,13 @@ collections:
   - name: "musicalwork"
     label: "Musical Works"
     label_singular: "Musical Work"
-    folder: "src/data/musicalwork"
+    folder: "static/data/musicalwork"
     extension: "json"
     format: "json"
     create: true
     fields:
       - {label: "id", name: "id", widget: "uuid"}
+      - {label: "type", name: "type", widget: "hidden", default: "work"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Title (Ar)", name: "title_ar", widget: "string"}
       - {label: "Alternate Titles", name: "alternate_titles", widget: "list", allow_add: true,
@@ -84,12 +85,13 @@ collections:
   - name: "genre"
     label: "Genres"
     label_singular: "Genre"
-    folder: "src/data/genre"
+    folder: "static/data/genre"
     extension: "json"
     format: "json"
     create: true
     identifier_field: "name"
     fields:
+      - {label: "type", name: "type", widget: "hidden", default: "genre"}
       - {label: "id", name: "id", widget: "uuid"}
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Name (Ar)", name: "name_ar", widget: "string"}
@@ -97,13 +99,14 @@ collections:
   - name: "agent"
     label: "Agents"
     label_singular: "Agent"
-    folder: "src/data/agent"
+    folder: "static/data/agent"
     extension: "json"
     format: "json"
     create: true
     identifier_field: "name"
     fields:
       - {label: "id", name: "id", widget: "uuid"}
+      - {label: "type", name: "type", widget: "hidden", default: "agent"}
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Name (Ar)", name: "name_ar", widget: "string"}
       - {label: "Alternate Names", name: "alternate_names", widget: "list", allow_add: true,
@@ -118,12 +121,13 @@ collections:
   - name: "release"
     label: "Releases"
     label_singular: "Release"
-    folder: "src/data/release"
+    folder: "static/data/release"
     extension: "json"
     format: "json"
     create: true
     fields:
       - {label: "id", name: "id", widget: "uuid"}
+      - {label: "type", name: "type", widget: "hidden", default: "release"}
       - {label: "Title of Release", name: "title", widget: "string"}
       - {label: "Label", name: "label", widget: "string"}
       - {label: "Catalogue Numbers", label_singular: "Catalogue Number", name: "catalogue_numbers", widget: "list", allow_add: true,
@@ -151,12 +155,13 @@ collections:
   - name: "track"
     label: "Tracks"
     label_singular: "Track"
-    folder: "src/data/track"
+    folder: "static/data/track"
     extension: "json"
     format: "json"
     create: true
     fields:
       - {label: "id", name: "id", widget: "uuid"}
+      - {label: "type", name: "type", widget: "hidden", default: "track"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Record Side", name: "record_side", widget: "string"}
       - {label: "Track Number", name: "track_number", multiple: true, widget: "string"}
@@ -191,11 +196,12 @@ collections:
   - name: "reference"
     label: "References"
     label_singular: "Reference"
-    folder: "src/data/reference"
+    folder: "static/data/reference"
     extension: "json"
     format: "json"
     create: true
     fields:
       - {label: "id", name: "id", widget: "uuid"}
+      - {label: "type", name: "type", widget: "hidden", default: "reference"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "BibTeX entry", name: "bibtex", widget: "text"}
