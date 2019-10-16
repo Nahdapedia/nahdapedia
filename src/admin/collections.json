@@ -30,10 +30,10 @@
     ]
   },
   {
-    "name": "musicalwork",
-    "label": "Musical Works",
-    "label_singular": "Musical Work",
-    "folder": "static/data/musicalwork",
+    "name": "work",
+    "label": "Works",
+    "label_singular": "Work",
+    "folder": "static/data/work",
     "extension": "json",
     "format": "json",
     "create": true,
@@ -454,7 +454,7 @@
         "label": "Musical Work",
         "name": "work",
         "widget": "relation",
-        "collection": "musicalwork",
+        "collection": "work",
         "searchFields": [
           "genre",
           "name"

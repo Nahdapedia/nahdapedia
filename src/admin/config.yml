@@ -18,10 +18,10 @@ collections:
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Body", name: "body", widget: "markdown"}
       
-  - name: "musicalwork"
-    label: "Musical Works"
-    label_singular: "Musical Work"
-    folder: "static/data/musicalwork"
+  - name: "Work"
+    label: "Works"
+    label_singular: "Work"
+    folder: "static/data/work"
     extension: "json"
     format: "json"
     create: true
@@ -204,7 +204,7 @@ collections:
       - {label: "Musical Work",
          name: "work",
          widget: "relation",
-         collection: "musicalwork", 
+         collection: "mwork", 
          searchFields: ["genre", "name"],
          valueField: "id",
          displayFields: ["genre", "name"],
