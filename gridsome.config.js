@@ -34,7 +34,7 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Genre',
-        baseDir: './src/data/genre/',
+        baseDir: './static/data/genre/',
         path: '*.json',
         pathPrefix: '/genre'
       }
