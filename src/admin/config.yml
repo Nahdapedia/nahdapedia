@@ -25,6 +25,7 @@ collections:
     format: "json"
     create: true
     identifier_field: "title"
+    slug: "{{fields.id}}"
     fields:
       - {label: "id", name: "id", widget: "uuid"}
       - {label: "type", name: "type", widget: "hidden", default: "work"}
@@ -93,6 +94,7 @@ collections:
     format: "json"
     create: true
     identifier_field: "name"
+    slug: "{{fields.id}}"
     fields:
       - {label: "id", name: "id", widget: "uuid"}
       - {label: "type", name: "type", widget: "hidden", default: "genre"}
@@ -107,6 +109,7 @@ collections:
     format: "json"
     create: true
     identifier_field: "name"
+    slug: "{{fields.id}}"
     fields:
       - {label: "id", name: "id", widget: "uuid"}
       - {label: "type", name: "type", widget: "hidden", default: "agent"}
@@ -130,6 +133,7 @@ collections:
     format: "json"
     create: true
     identifier_field: "name"
+    slug: "{{fields.id}}"
     fields:
       - {label: "id", name: "id", widget: "uuid"}
       - {label: "type", name: "type", widget: "hidden", default: "label"}
@@ -148,6 +152,7 @@ collections:
     format: "json"
     create: true
     identifier_field: "title"
+    slug: "{{fields.id}}"
     fields:
       - {label: "id", name: "id", widget: "uuid"}
       - {label: "type", name: "type", widget: "hidden", default: "release"}
@@ -188,6 +193,7 @@ collections:
     format: "json"
     create: true
     identifier_field: "title"
+    slug: "{{fields.id}}"
     fields:
       - {label: "id", name: "id", widget: "uuid"}
       - {label: "type", name: "type", widget: "hidden", default: "track"}
@@ -232,6 +238,7 @@ collections:
     format: "json"
     create: true
     identifier_field: "title"
+    slug: "{{fields.id}}"
     fields:
       - {label: "id", name: "id", widget: "uuid"}
       - {label: "type", name: "type", widget: "hidden", default: "reference"}
