@@ -21,10 +21,6 @@ export default {
 
 <page-query>
 query {
-  metadata {
-    siteName
-    siteDescription
-  }
   allGenre (sortBy: "name", order: ASC){
     totalCount
     edges {

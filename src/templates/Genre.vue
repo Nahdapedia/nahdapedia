@@ -20,11 +20,20 @@
 
 <page-query>
 query Genre ($id: ID!) {
-   genre: genre (id: $id) {
+   item: genre (id: $id) {
     id
     name
     name_ar
     path
+    works:belongsTo{
+      edges{
+        node{
+          ... on Work{
+            title
+          }
+        }
+      }
+    }
   }
 }
 </page-query>

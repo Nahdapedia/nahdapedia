@@ -75,12 +75,7 @@ module.exports = {
     }
   },
   templates: {
-    Genre: [
-        {
-          path: '/genre/:id/:name',
-          component: 'src/templates/Genre.vue'
-        }
-      ]
+    
   }
 
 }
