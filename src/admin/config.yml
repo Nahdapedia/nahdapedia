@@ -210,10 +210,10 @@ collections:
       - {label: "Track Number", name: "track_number", multiple: true, widget: "string", required: false}
       - {label: "Catalogue Number", name: "catalogue_number", widget: "string", required: false}
       - {label: "Matrix Number", name: "matrix_number", widget: "string", required: false}
-      - {label: "Musical Work",
+      - {label: "Work",
          name: "work",
          widget: "relation",
-         collection: "mwork", 
+         collection: "work", 
          searchFields: ["genre", "name"],
          valueField: "id",
          displayFields: ["genre", "name"],

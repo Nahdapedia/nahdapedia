@@ -500,7 +500,7 @@
         "required": false
       },
       {
-        "label": "Musical Work",
+        "label": "Work",
         "name": "work",
         "widget": "relation",
         "collection": "work",
