@@ -3,6 +3,23 @@
   "artist": [
     "ff1e020d-fa28-48e2-a6d1-a5ffbf3b8f41"
   ],
+  "tracks": [
+    {
+      "id": "dd781c1c-aa62-41a6-8d6d-69cac317d369",
+      "record_number": 1,
+      "side_number": 1,
+      "track_number": 1,
+      "catalogue_number": "012192",
+      "matrix_number": "1121C",
+      "work": "347e71bb-b113-4f6d-8128-a39457157014",
+      "contributors": [
+        {
+          "contributor": "ff1e020d-fa28-48e2-a6d1-a5ffbf3b8f41",
+          "contributor_role": "Vocalist"
+        }
+      ]
+    }
+  ],
   "release_type": "Commercial",
   "catalogue_numbers": [
     "012192",
@@ -13,7 +30,7 @@
   "label": "eb04274f-2bc3-4524-8c42-caf2f7fe7155",
   "media_type": "Shellac disc [12 inch]",
   "title": "Dor Kadni el-hawa and Mawwal Men reqqet ahl el baha - Yusuf al-Manyalawi",
-  "title_ar": "",
+  "title_ar": "Dor Kadni el-hawa and Mawwal Men reqqet ahl el baha - Yusuf al-Manyalawi",
   "type": "release",
   "id": "d028a167-88ac-40e6-b94f-99551f22e81d"
 }
