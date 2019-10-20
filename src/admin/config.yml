@@ -18,7 +18,7 @@ collections:
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Body", name: "body", widget: "markdown"}
       
-  - name: "Work"
+  - name: "work"
     label: "Works"
     label_singular: "Work"
     folder: "static/data/work"
@@ -49,19 +49,19 @@ collections:
          allow_add: true,
          required: false,
          fields: [
-            {name: "contributor_role",
-             label: "Role",
-             widget: "select",
-             options: ["Composer", "Writer"]
-            },
             {name: "contributor",
              label: "Contributor",
              widget: "relation",
              collection: "agent", 
              searchFields: ["name"],
              valueField: "id",
-             displayFields: ["name"]}
-             ]
+             displayFields: ["name"]},
+             {name: "contributor_role",
+             label: "Role",
+             widget: "select",
+             options: ["Composer", "Writer"]
+            }
+            ]
          }
       - {label: "Citations",
          name: "citations",
@@ -186,6 +186,47 @@ collections:
          displayFields: ["name"],
          multiple: true
          }
+      - {label: "Tracks",
+         name: "tracks",
+         widget: "list",
+         allow_add: true,
+         fields: [
+           {label: "track_id", name: "id", widget: "uuid"},
+           {label: "Record Number", name: "record_number", widget: "number", min: 1, default: 1, required: false},
+           {label: "Side Number", name: "side_number", widget: "number", min: 1, max: 2, required: false},
+           {label: "Track Number", name: "track_number", widget: "number", required: false},
+           {label: "Catalogue Number", name: "catalogue_number", widget: "string", required: false},
+           {label: "Matrix Number", name: "matrix_number", widget: "string", required: false},
+           {label: "Work",
+            name: "work",
+            widget: "relation",
+            collection: "work", 
+            searchFields: ["title"],
+            valueField: "id",
+            displayFields: ["title"],
+            multiple: false
+            },
+           {label: "Artists/Contributors",
+            name: "contributors",
+            widget: "list",
+            allow_add: true,
+            fields: [{name: "contributor",
+               label: "Contributor",
+               widget: "relation",
+               collection: "agent", 
+               searchFields: ["name"],
+               valueField: "id",
+               displayFields: ["name"],
+               required: true},
+               {name: "contributor_role",
+               label: "Role",
+               widget: "select",
+               options: ["Artist", "Composer", "Conductor", "Musician", "Performer", "Performing Group", "Recording Engineer", "Vocalist", "Writer"]
+               }
+               ]
+            }
+         ]
+      }
    
   - name: "track"
     label: "Tracks"
@@ -206,41 +247,40 @@ collections:
          valueField: "id",
          displayFields: ["title"],
          multiple: false}
-      - {label: "Record Side", name: "record_side", widget: "string", required: false}
-      - {label: "Track Number", name: "track_number", multiple: true, widget: "string", required: false}
-      - {label: "Catalogue Number", name: "catalogue_number", widget: "string", required: false}
-      - {label: "Matrix Number", name: "matrix_number", widget: "string", required: false}
       - {label: "Work",
          name: "work",
          widget: "relation",
          collection: "work", 
-         searchFields: ["genre", "title"],
+         searchFields: ["title"],
          valueField: "id",
-         displayFields: ["genre", "title"],
-         multiple: false,
-         required: false
+         displayFields: ["title"],
+         multiple: false
          }
+      - {label: "Record Number", name: "record_number", widget: "string", required: false}
+      - {label: "Track Number", name: "track_number", multiple: true, widget: "string", required: false}
+      - {label: "Catalogue Number", name: "catalogue_number", widget: "string", required: false}
+      - {label: "Matrix Number", name: "matrix_number", widget: "string", required: false}
       - {label: "Artists and Contributors",
          name: "contributors",
          widget: "list",
          allow_add: true,
          fields: [
-            {name: "contributor_role",
-             label: "Role",
-             widget: "select",
-             options: ["Artist", "Composer", "Conductor", "Musician", "Performer", "Performing Group", "Recording Engineer", "Vocalist", "Writer"]
-            },
             {name: "contributor",
              label: "Contributor",
              widget: "relation",
              collection: "agent", 
              searchFields: ["name"],
              valueField: "id",
-             displayFields: ["name"]},
-             required: false
-             ]
+             displayFields: ["name"],
+             required: false},
+             {name: "contributor_role",
+             label: "Role",
+             widget: "select",
+             options: ["Artist", "Composer", "Conductor", "Musician", "Performer", "Performing Group", "Recording Engineer", "Vocalist", "Writer"]
+            }]
          }
-            
+      
+         
   - name: "reference"
     label: "References"
     label_singular: "Reference"

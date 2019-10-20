@@ -4,7 +4,7 @@
         <ul class="navbar-list">
             <li class="navbar-item two columns"><g-link to="/agents" class="navbar-link">Artists ({{$static.artists.totalCount}})</g-link></li>
             <li class="navbar-item two columns"><g-link to="/works" class="navbar-link">Works ({{$static.works.totalCount}})</g-link></li>
-            <li class="navbar-item two columns"><g-link to="/genres" class="navbar-link">Genres ({{$static.works.totalCount}})</g-link></li>
+            <li class="navbar-item two columns"><g-link to="/genres" class="navbar-link">Genres ({{$static.genres.totalCount}})</g-link></li>
             <li class="navbar-item two columns"><g-link to="/releases" class="navbar-link">Releases ({{$static.releases.totalCount}})</g-link></li>
             <li class="navbar-item two columns"><g-link to="/labels" class="navbar-link">Labels ({{$static.labels.totalCount}})</g-link></li>
         </ul>

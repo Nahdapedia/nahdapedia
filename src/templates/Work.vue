@@ -66,11 +66,6 @@ query Work ($id: ID!) {
     title_ar
     alternate_titles
     lyrics
-    agents{
-      id
-      name
-      name_ar
-    }
     genre {
       id
       name
