@@ -504,15 +504,10 @@
         "name": "work",
         "widget": "relation",
         "collection": "work",
-        "searchFields": [
-          "genre",
-          "name"
-        ],
+        "searchFields": ["genre", "title"],
         "valueField": "id",
-        "displayFields": [
-          "genre",
-          "name"
-        ],
+        "displayFields": ["genre", "title"],
+        "multiple": false,
         "required": false
       },
       {
