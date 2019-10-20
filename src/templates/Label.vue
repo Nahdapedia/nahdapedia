@@ -1,26 +1,33 @@
 <template>
   <Layout>
-    <br>
-    <g-link to="/" class="link">  &larr; Go Back</g-link>
-    <div class="genre-name">
-      <h1>Genre: {{$page.item.name}}</h1>
-      <p class="item-name">id: {{ $page.item.id}}</p>
-      <p class="item-name">Name: {{ $page.item.name}}</p>
-      <p class="item-name">Name (Arabic): {{ $page.item.name_ar}}</p>
-      <ul>
-      <p class="item-name">Alternate Names:</p>
-        <li v-for="(alt_name, alt_index) in $page.item.alternate_names" v-bind:key="alt_index">{{alt_name}}</li>
-      </ul>
-      <p class="item-name">Path: {{ $page.item.path}}</p>
-    </div>
-    <div class="item-content">
-      <p v-html="$page.item.name" />
+    <PageHeading type="Label" :title="$page.item.name" :label="$page.item.label"/>
+    <div class="page-fields container">
+      <div class="field-row row">
+        <div class="field-label two columns">Name: </div>
+        <div class="field-value ten columns">{{$page.item.name}}</div>
+      </div>
+      <div class="field-row row">
+        <div class="field-label two columns">Name (Arabic): </div>
+        <div class="field-value ten columns">{{$page.item.name_ar}}</div>
+      </div>
+      <div class="field-row row">
+        <div class="field-label two columns">LC: </div>
+        <div class="field-value ten columns">{{$page.item.lc}}</div>
+      </div>
+      <div class="field-row row">
+        <div class="field-label two columns">Alternate Names: </div>
+        <div class="field-value ten columns">
+          <ul>
+            <li v-for="(alt_name, alt_index) in $page.item.alternate_names" v-bind:key="alt_index">{{alt_name}}</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </Layout>
 </template>
 
 <page-query>
-query Label ($id: String!) {
+query Label ($id: ID!) {
    item: label (id: $id) {
     id
     name
@@ -34,20 +41,14 @@ query Label ($id: String!) {
 
 <style>
 
-.item-name {
-  text-align: center;
-  font-size: 30px;
-  line-height: 10px;
-  padding: 2em 0;
-  font-family: 'Stylish';
-}
-
-.item-name_ar {
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.item-content {
-  font-size: 20px;
-}
 </style>
+
+
+<script>
+import PageHeading from '@/components/PageHeading.vue'
+
+export default {
+  components: {PageHeading}
+}
+
+</script>

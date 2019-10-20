@@ -3,6 +3,10 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 
+import '~/assets/css/normalize.css'
+import '~/assets/css/skeleton.css'
+import '~/assets/css/custom.css'
+
 export default function (Vue, { router, head, isClient }) {
   head.link.push({
     rel: 'stylesheet',

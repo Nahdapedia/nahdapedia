@@ -1,19 +1,20 @@
 <template>
   <Layout>
     <section class="items">
-      <ItemList title_field="title" v-for="item in $page.allWork.edges" :key="item.node.id" :item="item.node" />
+      <ItemList title_field="title" v-for="item in $page.allRelease.edges" :key="item.node.id" :item="item.node" />
     </section>
   </Layout>
 </template>
 
 <script>
 import ItemList from "@/components/ItemList";
+
 export default {
   components: {
     ItemList
   },
   metaInfo: {
-    title: "List of Works"
+    title: "List of Releases"
   }
 };
 </script>
@@ -24,20 +25,30 @@ query {
     siteName
     siteDescription
   }
-  allWork (sortBy: "title", order: ASC){
+  allRelease (sortBy: "name", order: ASC){
     totalCount
     edges {
       node {
         id
+        type
         title
-        title_ar
-        genre {
+        record_count
+        artist {
+          id
+          name
+          name_ar
+        }
+        release_type
+        catalogue_numbers
+        label{
           id
           name
         }
+        media_type
         path
       }
     }
+
   }
 }
 </page-query>

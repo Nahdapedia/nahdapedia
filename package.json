@@ -11,7 +11,7 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-json": "^0.2.1",
     "@gridsome/transformer-remark": "^0.3.4",
-    "gridsome": "^0.6.0",
+    "gridsome": "^0.7.8",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "gridsome-source-static-meta": "^1.0.1",
     "netlify-cms": "^2.9.7"

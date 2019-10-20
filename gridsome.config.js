@@ -35,6 +35,11 @@ plugins.push(
 
 function setup_collection_plugin(collection, index) 
 { 
+  if (!collection.hasOwnProperty('refs')){
+    refs = {}
+  } else {
+    refs = collection.refs;
+  }
 
   plugins.push({
     use: '@gridsome/source-filesystem',
@@ -42,7 +47,8 @@ function setup_collection_plugin(collection, index)
       typeName: collection.label_singular.replace(/\s+/g, ''), //strip whitespace
       baseDir: `./static/data/${collection.name}/`,
       path: '*.json',
-      pathPrefix: `/${collection.name}`
+      pathPrefix: `/${collection.name}`,
+      refs: refs
     }
   });
 
@@ -53,7 +59,7 @@ collections.forEach(setup_collection_plugin);
 
 module.exports = {
   siteName: 'Nahdapedia',
-  siteDescription: 'Nahdapedia',
+  siteDescription: 'The open database cataloguing Egyptian artists and recordings of the Nahda era.',
   siteUrl: '',
   plugins: plugins,
   transformers: {
@@ -78,4 +84,3 @@ module.exports = {
   }
 
 }
-

@@ -39,6 +39,21 @@
     "create": true,
     "identifier_field": "title",
     "slug": "{{fields.id}}",
+    "refs": {
+      "genre": "Genre"
+    },
+    "object_refs": {
+       "contributors": {
+         "relation": "agent",
+         "fk": "contributor",
+         "additional_fields": ["contributor_role"]
+       },
+       "citations": {
+         "relation": "reference",
+         "fk": "citation_reference",
+         "additional_fields": ["footnote_number", "citation_comment"]
+       }
+    },
     "fields": [
       {
         "label": "id",
@@ -88,7 +103,7 @@
         "searchFields": [
           "name"
         ],
-        "valueField": "name",
+        "valueField": "id",
         "displayFields": [
           "name"
         ],
@@ -322,6 +337,10 @@
     "create": true,
     "identifier_field": "title",
     "slug": "{{fields.id}}",
+    "refs": {
+      "label": "Label",
+      "artist": "Agent"
+    },
     "fields": [
       {
         "label": "id",
@@ -337,6 +356,11 @@
       {
         "label": "Title of Release",
         "name": "title",
+        "widget": "string"
+      },
+      {
+        "label": "Title of Release (Ar)",
+        "name": "title_ar",
         "widget": "string"
       },
       {
@@ -420,6 +444,9 @@
     "create": true,
     "identifier_field": "title",
     "slug": "{{fields.id}}",
+    "refs": {
+      "work": "Work"
+    },
     "fields": [
       {
         "label": "id",
@@ -438,6 +465,16 @@
         "widget": "string"
       },
       {
+        "label": "Release",
+        "name": "release",
+        "widget": "relation",
+        "collection": "release", 
+        "searchFields": ["title", "label"],
+        "valueField": "id",
+        "displayFields": ["title"],
+        "multiple": false
+      },
+      {
         "label": "Record Side",
         "name": "record_side",
         "widget": "string",
@@ -447,6 +484,18 @@
         "label": "Track Number",
         "name": "track_number",
         "multiple": true,
+        "widget": "string",
+        "required": false
+      },
+      {
+        "label": "Catalogue Number",
+        "name": "catalogue_number",
+        "widget": "string",
+        "required": false
+      },
+      {
+        "label": "Matrix Number",
+        "name": "matrix_number",
         "widget": "string",
         "required": false
       },
@@ -503,41 +552,41 @@
             "required": false
           }
         ]
+      }
+    ]
+  },
+  {
+    "name": "reference",
+    "label": "References",
+    "label_singular": "Reference",
+    "folder": "static/data/reference",
+    "extension": "json",
+    "format": "json",
+    "create": true,
+    "identifier_field": "title",
+    "slug": "{{fields.id}}",
+    "fields": [
+      {
+        "label": "id",
+        "name": "id",
+        "widget": "uuid"
       },
       {
-        "name": "reference",
-        "label": "References",
-        "label_singular": "Reference",
-        "folder": "static/data/reference",
-        "extension": "json",
-        "format": "json",
-        "create": true,
-        "identifier_field": "title",
-        "slug": "{{fields.id}}",
-        "fields": [
-          {
-            "label": "id",
-            "name": "id",
-            "widget": "uuid"
-          },
-          {
-            "label": "type",
-            "name": "type",
-            "widget": "hidden",
-            "default": "reference"
-          },
-          {
-            "label": "Title",
-            "name": "title",
-            "widget": "string"
-          },
-          {
-            "label": "BibTeX entry",
-            "name": "bibtex",
-            "widget": "text",
-            "required": false
-          }
-        ]
+        "label": "type",
+        "name": "type",
+        "widget": "hidden",
+        "default": "reference"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "widget": "string"
+      },
+      {
+        "label": "BibTeX entry",
+        "name": "bibtex",
+        "widget": "text",
+        "required": false
       }
     ]
   }

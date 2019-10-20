@@ -26,20 +26,4 @@ query Post ($path: String!) {
 
 <style>
 
-.post-title {
-  text-align: center;
-  font-size: 30px;
-  line-height: 10px;
-  padding: 2em 0;
-  font-family: 'Stylish';
-}
-
-.post-date {
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.post-content {
-  font-size: 20px;
-}
 </style>
