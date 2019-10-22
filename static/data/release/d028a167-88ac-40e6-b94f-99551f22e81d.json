@@ -16,6 +16,111 @@
         {
           "contributor": "ff1e020d-fa28-48e2-a6d1-a5ffbf3b8f41",
           "contributor_role": "Vocalist"
+        },
+        {
+          "contributor": "4e8d15c2-6cd0-444e-b0fa-0cc4222e31e1",
+          "contributor_role": "Musician"
+        },
+        {
+          "contributor": "287b03a5-d58b-40dc-a800-7eabdd140c69",
+          "contributor_role": "Musician"
+        },
+        {
+          "contributor": "eb097a97-2130-4ee9-ae77-043f867e941b",
+          "contributor_role": "Recording Engineer"
+        }
+      ]
+    },
+    {
+      "id": "a3d17648-ad63-47ce-970c-bc972d3cd408",
+      "record_number": 1,
+      "side_number": 2,
+      "track_number": 1,
+      "catalogue_number": "012193",
+      "matrix_number": "1122C",
+      "work": "347e71bb-b113-4f6d-8128-a39457157014",
+      "contributors": [
+        {
+          "contributor": "ff1e020d-fa28-48e2-a6d1-a5ffbf3b8f41",
+          "contributor_role": "Vocalist"
+        },
+        {
+          "contributor": "4e8d15c2-6cd0-444e-b0fa-0cc4222e31e1",
+          "contributor_role": "Musician"
+        },
+        {
+          "contributor": "d3261e4c-259f-49f4-be33-e53ea42dd57d",
+          "contributor_role": "Musician"
+        },
+        {
+          "contributor": "287b03a5-d58b-40dc-a800-7eabdd140c69",
+          "contributor_role": "Musician"
+        },
+        {
+          "contributor": "eb097a97-2130-4ee9-ae77-043f867e941b",
+          "contributor_role": "Recording Engineer"
+        }
+      ]
+    },
+    {
+      "id": "310238a6-6b58-4ddc-bae7-2e81ff8c3108",
+      "record_number": 2,
+      "side_number": 1,
+      "track_number": 1,
+      "catalogue_number": "012194",
+      "matrix_number": "1123C",
+      "work": "347e71bb-b113-4f6d-8128-a39457157014",
+      "contributors": [
+        {
+          "contributor": "ff1e020d-fa28-48e2-a6d1-a5ffbf3b8f41",
+          "contributor_role": "Vocalist"
+        },
+        {
+          "contributor": "4e8d15c2-6cd0-444e-b0fa-0cc4222e31e1",
+          "contributor_role": "Musician"
+        },
+        {
+          "contributor": "d3261e4c-259f-49f4-be33-e53ea42dd57d",
+          "contributor_role": "Musician"
+        },
+        {
+          "contributor": "287b03a5-d58b-40dc-a800-7eabdd140c69",
+          "contributor_role": "Performer"
+        },
+        {
+          "contributor": "eb097a97-2130-4ee9-ae77-043f867e941b",
+          "contributor_role": "Recording Engineer"
+        }
+      ]
+    },
+    {
+      "id": "2fbfcccf-efb7-42ce-9954-ca8df2d6bdc9",
+      "record_number": 1,
+      "side_number": 2,
+      "track_number": 3,
+      "catalogue_number": "012195",
+      "matrix_number": "1124C",
+      "work": "5cbb2583-f9e6-4d23-851f-780defd7cee4",
+      "contributors": [
+        {
+          "contributor": "ff1e020d-fa28-48e2-a6d1-a5ffbf3b8f41",
+          "contributor_role": "Vocalist"
+        },
+        {
+          "contributor": "4e8d15c2-6cd0-444e-b0fa-0cc4222e31e1",
+          "contributor_role": "Musician"
+        },
+        {
+          "contributor": "d3261e4c-259f-49f4-be33-e53ea42dd57d",
+          "contributor_role": "Musician"
+        },
+        {
+          "contributor": "287b03a5-d58b-40dc-a800-7eabdd140c69",
+          "contributor_role": "Musician"
+        },
+        {
+          "contributor": "eb097a97-2130-4ee9-ae77-043f867e941b",
+          "contributor_role": "Recording Engineer"
         }
       ]
     }
