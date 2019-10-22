@@ -62,6 +62,7 @@ query Work ($id: ID!) {
    item: work (id: $id) {
     id
     type
+    path
     title
     title_ar
     alternate_titles

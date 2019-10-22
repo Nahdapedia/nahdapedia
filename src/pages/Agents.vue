@@ -1,19 +1,27 @@
 <template>
   <Layout>
     <section class="items">
-      <ItemList title_field="name" v-for="item in $page.allAgent.edges" :key="item.node.id" :item="item.node" />
+      <ul class="artists-list">
+        <li v-for="item in $page.allAgent.edges" :key="item.node.id" >
+          <MicrophoneIcon style="display: inline-block; margin-right: 5px;"></MicrophoneIcon>
+          <ItemList title_field="name" :item="item.node" display="inline"/>
+        </li>
+      </ul>
     </section>
   </Layout>
 </template>
 
 <script>
 import ItemList from "@/components/ItemList";
+import MicrophoneIcon from 'vue-ionicons/dist/md-microphone.vue'
+
 export default {
   components: {
-    ItemList
+    ItemList,
+    MicrophoneIcon
   },
   metaInfo: {
-    title: "Agent Listing"
+    title: "Artists Listing"
   }
 };
 </script>
@@ -41,5 +49,18 @@ query {
 </page-query>
 
 <style>
+
+.artists-list{
+  list-style-type: none;
+}
+.artists-list li{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+.artists-list a{
+  text-decoration: none;
+}
 
 </style>

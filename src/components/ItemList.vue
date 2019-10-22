@@ -1,5 +1,5 @@
 <template>
-  <div class="item-list">
+  <div class="item-list" :style="{display: display}">
     <g-link :to="item.path" class="title">{{this.$props.item[this.$props.title_field]}}</g-link>
   </div>
 </template>
@@ -8,7 +8,8 @@
 export default {
   props: {
     item: {type: Object},
-    title_field: {default: "title"}
+    title_field: {default: "title"},
+    display: {default: "block"}
   },
 
 

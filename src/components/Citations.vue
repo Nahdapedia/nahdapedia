@@ -5,6 +5,7 @@
       <span class="citation-number">{{citation.footnote_number}}. </span>
       <p class="citation-title"><g-link :to="citation.path" class="title">{{citation.title}}</g-link></p>
       <p class="citation-comment">{{citation.citation_comment}}</p>
+      
     </li>  
   </ol> 
 </div>
