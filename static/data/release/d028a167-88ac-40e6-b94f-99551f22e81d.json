@@ -22,6 +22,10 @@
           "contributor_role": "Musician"
         },
         {
+          "contributor": "d3261e4c-259f-49f4-be33-e53ea42dd57d",
+          "contributor_role": "Musician"
+        },
+        {
           "contributor": "287b03a5-d58b-40dc-a800-7eabdd140c69",
           "contributor_role": "Musician"
         },
@@ -95,7 +99,7 @@
     },
     {
       "id": "2fbfcccf-efb7-42ce-9954-ca8df2d6bdc9",
-      "record_number": 1,
+      "record_number": 2,
       "side_number": 2,
       "track_number": 3,
       "catalogue_number": "012195",

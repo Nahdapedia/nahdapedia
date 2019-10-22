@@ -47,25 +47,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="track in this.$page.item.tracks" :key="track.id" :item="track">
-                        <td>
+                    <tr v-for="track in this.$page.item.tracks" :key="track.id">
+                        <td class="track-track-details">
+                            <div class="track-label track-label-record-number">
+                                <DiscIcon style="display: inline-block; margin-right: 5px;" />
+                                <span class="track-record-number">{{track.record_number}}</span>
+                                <span class="track-side-number"> - Side: {{track.side_number}}</span>
+                            </div>
+                            <div class="track-label"><span class="track-catalogue-number">Catalogue: {{track.catalogue_number}}</span></div>
+                            <div class="track-label"><span class="track-matrix-number">Matrix: {{track.matrix_number}}</span></div>
+                        </td>
+                        <td class="track-work-info">
                             <div>
                                 <LinkifyNode class="linkified-work" title_field="title" node_type="work" :node_id="track.work"/>
                             </div>
-                            <div class="track-label"><span class="track-label track-record-number">Record number: </span>{{track.record_number}}</div>
-                            <div class="track-label"><span class="track-label track-side-number">Side number: </span>{{track.record_number}}</div>
-                            <div class="track-label"><span class="track-label track-catalogue-number">Catalogue number: </span>{{track.catalogue_number}}</div>
-                            <div class="track-label"><span class="track-label track-matrix-number">Matrix number: </span>{{track.matrix_number}}</div>
                         </td>
-                        <td>
-                            <div class="track-contributor" v-for="c in track.contributors" :key="c.contributor" :item="c">
-                                <ol class="contributor-list">
-                                    <li>
-                                        <LinkifyNode class="linkified-contributor" title_field="name" v-for="c in track.contributors" :key="c.id" node_type="agent" :node_id="c.contributor"/>
+                        <td class="track-contributors">
+                            <ol class="contributor-list">
+                                    <li class="contributor-item"  v-for="c in track.contributors" :key="c.contributor" :item="c">
+                                        <LinkifyNode class="linkified-contributor" title_field="name" :key="c.id" node_type="agent" :node_id="c.contributor"/>
                                         <p>{{c.contributor_role}}</p>
                                     </li>
-                                </ol>
-                            </div>
+                            </ol>
                             
                         </td>
                     </tr>
@@ -80,14 +83,36 @@
 
 <style>
 .track-label{
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
+
+div.track-label-record-number,
+span.track-record-number{
+    font-size: 2.2rem;
+}
+span.track-side-number{
+    font-size: 1.1rem;
+}
+
 .linkified-contributor{
     text-decoration: none;
 }
-.contributor-list{
+
+.track-contributors ol.contributor-list{
     list-style-type: none;
 }
+
+td.track-track-details,
+td.track-work-info{
+    vertical-align: top;
+}
+
+li.contributor-item,
+li.contributor-item p{
+    margin-top: 0px;
+    margin-bottom: 1px;
+}
+
 </style>
 
 <page-query>
@@ -115,6 +140,8 @@ query Release ($id: ID!) {
         record_number
         side_number
         track_number
+        catalogue_number
+        matrix_number
         work
         contributors{
             contributor
@@ -130,12 +157,13 @@ import PageHeading from '@/components/PageHeading.vue'
 import ReleaseHeading from '@/components/ReleaseHeading.vue'
 import ItemList from "@/components/ItemList";
 import LinkifyNode from "@/components/LinkifyNode"
+import DiscIcon from 'vue-ionicons/dist/md-disc.vue'
 
 export default {
-  components: {PageHeading, ReleaseHeading, ItemList, LinkifyNode},
+  components: {PageHeading, ReleaseHeading, ItemList, LinkifyNode, DiscIcon},
   data: () => {
       return {
-        track_fields: ['Work', 'Artists/Contributors']
+        track_fields: ['Track', 'Work', 'Artists/Contributors']
       }
   }
 }
