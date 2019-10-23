@@ -74,15 +74,6 @@ module.exports = function (api) {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api
   });
 
-  api.loadSource(({ addSchemaTypes }) => {
-    addSchemaTypes(`
-      type WorkContributor {
-        id: String
-        role: String
-        agent: Agent
-      }
-    `)
-  });
 
   api.loadSource(({ addSchemaResolvers }) => {
     addSchemaResolvers({

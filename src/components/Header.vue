@@ -1,11 +1,41 @@
 <template>
     <header class="header">
-        <h1>{{$static.metadata.siteName}}</h1>
-        <h5>{{$static.metadata.siteDescription}}</h5>
+        <div id="headerdiv">
+          <a href="/"><span id="nahda">NAHDA</span><span id="pedia">PEDIA</span></a>
+          <h6>{{$static.metadata.siteDescription}}</h6>
+        </div>
+        
     </header>
 </template>
 
+
 <style>
+
+.header{
+  padding-top: 6rem;
+}
+
+#headerdiv a{
+
+  text-decoration: none;
+  color: #222222;
+
+}
+
+#nahda, #pedia{
+  font-weight: 100; 
+  font-family: 'Rubik', sans-serif;
+  line-height: 3rem;
+}
+
+#nahda{
+  font-size: 10rem;
+}
+
+#pedia{
+  font-size: 6rem;
+  color: #414141;
+}
 
 </style>
 

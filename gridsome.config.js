@@ -75,7 +75,17 @@ module.exports = {
     }
   },
   templates: {
-    
+    Agent: [
+      {
+        path: '/agent/:id',
+        component: './src/templates/Agent.vue'
+      },
+      {
+        name: 'appears_in',
+        path: '/agent/:id/appears_in',
+        component: './src/templates/AgentAppearsIn.vue'
+      }
+    ]
   }
 
 }

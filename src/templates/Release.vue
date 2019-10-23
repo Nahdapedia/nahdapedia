@@ -1,6 +1,11 @@
 <template>
   <Layout>
-    <ReleaseHeading type="Release" :title="$page.item.title" :label="$page.item.label"/>
+    <ReleaseHeading type="Release"
+                    :title="$page.item.title"
+                    :label="$page.item.label"
+                    :artist="$page.item.artist"
+                    :catalogue_numbers="$page.item.catalogue_numbers"
+                    />
     <div class="page-fields container">
       <div class="field-row row">
         <div class="field-label two columns">Title: </div>
@@ -21,21 +26,6 @@
       <div class="field-row row">
         <div class="field-label two columns">Release type: </div>
         <div class="field-value ten columns">{{$page.item.release_type}}</div>
-      </div>
-      <div class="field-row row">
-        <div class="field-label two columns">Artists: </div>
-        <div class="field-value ten columns">
-            <ItemList title_field="name" v-for="artist in $page.item.artist" :key="artist.id" :item="artist" />
-        </div>
-
-      </div>
-      <div class="field-row row">
-        <div class="field-label two columns">Catalogue numbers: </div>
-        <div class="field-value ten columns">
-          <ul>
-            <li v-for="(catno, cat_index) in $page.item.catalogue_numbers" v-bind:key="cat_index">{{catno}}</li>
-          </ul>
-        </div>
       </div>
       <div class="field-row row">
         <div class="field-label two columns">Tracks: </div>
@@ -82,6 +72,11 @@
 
 
 <style>
+div.release-heading {
+    margin-bottom: 3rem;
+
+}
+
 .track-label{
     font-size: 1.1rem;
 }

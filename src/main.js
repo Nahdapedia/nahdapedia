@@ -8,9 +8,14 @@ import '~/assets/css/skeleton.css'
 import '~/assets/css/custom.css'
 
 export default function (Vue, { router, head, isClient }) {
-  head.link.push({
+  head.link.push(
+  {
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css?family=Stylish&display=swap'
+    href: 'https://fonts.googleapis.com/css?family=Rubik&display=swap'
+  },
+  {
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css?family=Raleway100&display=swap'
   }),
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
