@@ -1,0 +1,47 @@
+{
+  "record_count": 1,
+  "artist": [
+    "ff1e020d-fa28-48e2-a6d1-a5ffbf3b8f41"
+  ],
+  "tracks": [
+    {
+      "id": "6ee578d6-ee97-4507-b170-5d29b25079d5",
+      "record_number": 1,
+      "side_number": 1,
+      "track_number": 1,
+      "catalogue_number": "012423",
+      "work": "ad57190f-c2bd-48a4-838a-d01b6843c7ea",
+      "contributors": [
+        {
+          "contributor": "ff1e020d-fa28-48e2-a6d1-a5ffbf3b8f41",
+          "contributor_role": "Vocalist"
+        }
+      ]
+    },
+    {
+      "id": "35644bee-b1cc-46ac-81ca-84b9ae8a9489",
+      "record_number": 1,
+      "side_number": 2,
+      "track_number": 1,
+      "catalogue_number": "012424",
+      "work": "ad57190f-c2bd-48a4-838a-d01b6843c7ea",
+      "contributors": [
+        {
+          "contributor": "ff1e020d-fa28-48e2-a6d1-a5ffbf3b8f41",
+          "contributor_role": "Vocalist"
+        }
+      ]
+    }
+  ],
+  "release_type": "Commercial",
+  "catalogue_numbers": [
+    "012423",
+    "012424"
+  ],
+  "label": "eb04274f-2bc3-4524-8c42-caf2f7fe7155",
+  "media_type": "Shellac disc [12 inch]",
+  "title": "Allah Yesoun Dawlit Husnak",
+  "title_ar": "الله يصون دولة حسنك",
+  "type": "release",
+  "id": "55a1ab79-5b51-423e-b3a3-11484ab3b9ee"
+}
