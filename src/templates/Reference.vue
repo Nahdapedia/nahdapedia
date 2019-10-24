@@ -28,6 +28,7 @@ query Reference ($id: ID!) {
     path
   }
 }
+
 </page-query>
 
 <style>

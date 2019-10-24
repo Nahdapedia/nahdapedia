@@ -14,7 +14,7 @@ citations:
 ### What is this?
 This project is intended as an academic open effort to catalogue and preserve the recorded legacy of Egyptian musical art at the turn of the 20th century, a period commonly referred to as the "Nahda era" by previous authors.
 
-It builds upon the pioneering work by Frédéric Lagrange<sup>1</sup>, aiming to update it with recent discoveries in this field which were not available back in 1994. These recent discoveries were made more accessible to the public in more recent times by organizations such as the AMAR Foundation for Arab Music Archiving & Research.
+It builds upon the pioneering work "Musiciens et poètes en Egypte au temps de la Nahda" by Frédéric Lagrange, aiming to update it with recent discoveries in this field which were not available back in 1994. These recent discoveries were made more accessible to the public in more recent times by organizations such as the AMAR Foundation for Arab Music Archiving & Research.
 
 The project aims to achieve this mission in a collective open-source endeavour where people can participate, correct, and add entries to the "database".
 
