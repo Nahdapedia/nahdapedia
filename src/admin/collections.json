@@ -40,7 +40,8 @@
     "identifier_field": "title",
     "slug": "{{fields.id}}",
     "refs": {
-      "genre": "Genre"
+      "genre": "Genre",
+      "maqam": "Maqam"
     },
     "object_refs": {
        "contributors": {

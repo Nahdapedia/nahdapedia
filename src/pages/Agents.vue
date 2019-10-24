@@ -4,7 +4,7 @@
       <ul class="artists-list">
         <li v-for="item in $page.allAgent.edges" :key="item.node.id" >
           <MicrophoneIcon style="display: inline-block; margin-right: 5px;"></MicrophoneIcon>
-          <ItemList title_field="name" :item="item.node" display="inline"/>
+          <ListingItem title_field="name" :item="item.node" display="inline"/>
         </li>
       </ul>
     </section>
@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import ItemList from "@/components/ItemList";
+import ListingItem from "@/components/ListingItem";
 import MicrophoneIcon from 'vue-ionicons/dist/md-microphone.vue'
 
 export default {
   components: {
-    ItemList,
+    ListingItem,
     MicrophoneIcon
   },
   metaInfo: {

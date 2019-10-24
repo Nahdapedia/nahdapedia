@@ -150,12 +150,12 @@ query Release ($id: ID!) {
 <script>
 import PageHeading from '@/components/PageHeading.vue'
 import ReleaseHeading from '@/components/ReleaseHeading.vue'
-import ItemList from "@/components/ItemList";
+import ListingItem from "@/components/ListingItem";
 import LinkifyNode from "@/components/LinkifyNode"
 import DiscIcon from 'vue-ionicons/dist/md-disc.vue'
 
 export default {
-  components: {PageHeading, ReleaseHeading, ItemList, LinkifyNode, DiscIcon},
+  components: {PageHeading, ReleaseHeading, ListingItem, LinkifyNode, DiscIcon},
   data: () => {
       return {
         track_fields: ['Track', 'Work', 'Artists/Contributors']

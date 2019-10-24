@@ -24,7 +24,11 @@
       </div>
       <div class="field-row row">
         <div class="field-label two columns">Genre: </div>
-        <div class="field-value ten columns">{{$page.item.genre.name | $page.item.genre.name_ar}}</div>
+        <div class="field-value ten columns"><g-link :to="$url($page.item.genre.path)">{{$page.item.genre.name | $page.item.genre.name_ar}}</g-link></div>
+      </div>
+      <div class="field-row row">
+        <div class="field-label two columns">Maqam: </div>
+        <div class="field-value ten columns"><g-link :to="$url($page.item.maqam.path)">{{$page.item.maqam.name | $page.item.maqam.name_ar}}</g-link></div>
       </div>
       <div class="field-row row">
         <div class="field-label two columns">Artists and Contributors: </div>
@@ -70,6 +74,13 @@ query Work ($id: ID!) {
     genre {
       id
       name
+      name_ar
+      path
+    }
+    maqam {
+      id
+      name
+      name_ar
       path
     }
     contributors {

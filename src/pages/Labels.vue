@@ -4,7 +4,7 @@
       <ul class="labels-list">
         <li v-for="item in $page.allLabel.edges" :key="item.node.id">
           <RadioIcon style="display: inline-block; margin-right: 5px;"></RadioIcon>
-          <ItemList title_field="name" :item="item.node" display="inline" />
+          <ListingItem title_field="name" :item="item.node" display="inline" />
         </li>
       </ul>
     </section>
@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import ItemList from "@/components/ItemList";
+import ListingItem from "@/components/ListingItem";
 import RadioIcon from "vue-ionicons/dist/md-radio.vue"
 
 export default {
   components: {
-    ItemList,
+    ListingItem,
     RadioIcon
   },
   metaInfo: {

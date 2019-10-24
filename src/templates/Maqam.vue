@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <PageHeading type="Genre" :title="$page.item.name" />
+    <PageHeading type="Maqam" :title="$page.item.name" />
     <div class="page-fields container">
       <div class="field-row row">
         <div class="field-label two columns">Nahdapedia id: </div>
@@ -29,7 +29,6 @@
   </Layout>
 </template>
 
-
 <style>
   ul.works-list{
     list-style-type: none;
@@ -38,12 +37,11 @@
 </style>
 
 <page-query>
-query Genre ($id: ID!) {
-   item: genre (id: $id) {
+query Maqam ($id: ID!){
+  item: maqam (id: $id) {
     id
     name
     name_ar
-    path
     works:belongsTo(sortBy: "title", order: ASC){
       totalCount
       edges{
@@ -56,7 +54,7 @@ query Genre ($id: ID!) {
           }
         }
       }
-  	}
+  	}  
   }
 }
 </page-query>
@@ -69,6 +67,5 @@ import ListingItem from "@/components/ListingItem.vue";
 export default {
   components: {PageHeading, MusicalNotesIcon, ListingItem}
 }
-
 
 </script>

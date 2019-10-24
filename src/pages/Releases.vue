@@ -4,7 +4,7 @@
       <ul class="releases-list">
         <li v-for="item in $page.allRelease.edges" :key="item.node.id" >
           <DiscIcon style="display: inline-block; margin-right: 5px;"></DiscIcon>
-          <ItemList title_field="title" :item="item.node" display="inline" />
+          <ListingItem title_field="title" :item="item.node" display="inline" />
         </li>
       </ul>
     </section>
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import ItemList from "@/components/ItemList";
+import ListingItem from "@/components/ListingItem";
 import DiscIcon from 'vue-ionicons/dist/md-disc.vue'
 
 export default {
   components: {
-    ItemList,
+    ListingItem,
     DiscIcon
   },
   metaInfo: {

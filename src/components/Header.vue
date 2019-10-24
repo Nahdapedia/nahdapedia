@@ -15,6 +15,11 @@
   padding-top: 6rem;
 }
 
+#headerdiv{
+  width: 100%;
+  text-align: center;
+}
+
 #headerdiv a{
 
   text-decoration: none;
@@ -29,12 +34,28 @@
 }
 
 #nahda{
-  font-size: 10rem;
+  font-size: 10vw;
 }
 
 #pedia{
-  font-size: 6rem;
+  font-size: 6vw;
   color: #414141;
+}
+
+@media (min-width: 1000px) {
+  #headerdiv{
+    width: 100%;
+    text-align: left;
+  }
+
+  #nahda{
+    font-size: 10rem;
+  }
+
+  #pedia{
+    font-size: 6rem;
+  }
+
 }
 
 </style>

@@ -4,7 +4,7 @@
       <ul class="works-list">
         <li v-for="item in $page.allWork.edges" :key="item.node.id" >
           <MusicalNotesIcon style="display: inline-block; margin-right: 5px;"></MusicalNotesIcon>
-          <ItemList title_field="title" :item="item.node" display="inline" />
+          <ListingItem title_field="title" :item="item.node" display="inline" />
         </li>
       </ul>
     </section>
@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import ItemList from "@/components/ItemList";
+import ListingItem from "@/components/ListingItem.vue";
 import MusicalNotesIcon from 'vue-ionicons/dist/md-musical-notes.vue'
 
 export default {
   components: {
-    ItemList,
+    ListingItem,
     MusicalNotesIcon
   },
   metaInfo: {
@@ -42,6 +42,11 @@ query {
         genre {
           id
           name
+        }
+        maqam {
+          id
+          name
+          name_ar
         }
         path
       }

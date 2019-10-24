@@ -9,13 +9,44 @@ collections:
   - name: "posts"
     label: "Posts"
     label_singular: "Post"
-    folder: "post"
+    folder: "static/post"
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.language}}/{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Excerpt", name: "excerpt", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "date"}
+      - {name: "language",
+         label: "Language",
+         widget: "select",
+         required: true,
+         options: ["en", "ar"],
+         default: "en"
+         }
+      - {label: "Citations",
+         name: "citations",
+         widget: "list",
+         allow_add: true,
+         required: false,
+         fields: [
+            {name: "footnote_number",
+             label: "Footnote number",
+             widget: "number",
+            },
+            {name: "citation_comment",
+             label: "Citation Comment",
+             widget: "text",
+            },
+            {name: "citation_reference",
+             label: "Citation Reference",
+             widget: "relation",
+             collection: "reference", 
+             searchFields: ["title", "bibtex"],
+             valueField: "id",
+             displayFields: ["title"]
+            }
+             ]
+         }
       - {label: "Body", name: "body", widget: "markdown"}
       
   - name: "work"

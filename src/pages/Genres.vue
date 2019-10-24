@@ -4,7 +4,7 @@
       <ul class="genres-list">
         <li v-for="item in $page.allGenre.edges" :key="item.node.id">
           <PriceTagIcon style="display: inline-block; margin-right: 5px;"></PriceTagIcon>
-          <ItemList title_field="name" :item="item.node" display="inline" />
+          <ListingItem title_field="name" :item="item.node" display="inline" />
         </li>
       </ul>
     </section>
@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import ItemList from "@/components/ItemList";
+import ListingItem from "@/components/ListingItem";
 import PriceTagIcon from "vue-ionicons/dist/md-pricetag.vue"
 
 export default {
   components: {
-    ItemList,
+    ListingItem,
     PriceTagIcon
   },
   metaInfo: {
