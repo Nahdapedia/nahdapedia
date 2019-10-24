@@ -211,6 +211,41 @@
     ]
   },
   {
+    "name": "maqam",
+    "label": "Maqams",
+    "label_singular": "Maqam",
+    "folder": "static/data/maqam",
+    "extension": "json",
+    "format": "json",
+    "create": true,
+    "identifier_field": "name",
+    "slug": "{{fields.id}}",
+    "fields": [
+      {
+        "label": "id",
+        "name": "id",
+        "widget": "uuid"
+      },
+      {
+        "label": "type",
+        "name": "type",
+        "widget": "hidden",
+        "default": "maqam"
+      },
+      {
+        "label": "Name",
+        "name": "name",
+        "widget": "string"
+      },
+      {
+        "label": "Name (Ar)",
+        "name": "name_ar",
+        "widget": "string",
+        "required": false
+      }
+    ]
+  },
+  {
     "name": "agent",
     "label": "Agents",
     "label_singular": "Agent",
@@ -431,122 +466,6 @@
           "name"
         ],
         "multiple": true
-      }
-    ]
-  },
-  {
-    "name": "track",
-    "label": "Tracks",
-    "label_singular": "Track",
-    "folder": "static/data/track",
-    "extension": "json",
-    "format": "json",
-    "create": true,
-    "identifier_field": "title",
-    "slug": "{{fields.id}}",
-    "refs": {
-      "work": "Work"
-    },
-    "fields": [
-      {
-        "label": "id",
-        "name": "id",
-        "widget": "uuid"
-      },
-      {
-        "label": "type",
-        "name": "type",
-        "widget": "hidden",
-        "default": "track"
-      },
-      {
-        "label": "Title",
-        "name": "title",
-        "widget": "string"
-      },
-      {
-        "label": "Release",
-        "name": "release",
-        "widget": "relation",
-        "collection": "release", 
-        "searchFields": ["title", "label"],
-        "valueField": "id",
-        "displayFields": ["title"],
-        "multiple": false
-      },
-      {
-        "label": "Record Side",
-        "name": "record_side",
-        "widget": "string",
-        "required": false
-      },
-      {
-        "label": "Track Number",
-        "name": "track_number",
-        "multiple": true,
-        "widget": "string",
-        "required": false
-      },
-      {
-        "label": "Catalogue Number",
-        "name": "catalogue_number",
-        "widget": "string",
-        "required": false
-      },
-      {
-        "label": "Matrix Number",
-        "name": "matrix_number",
-        "widget": "string",
-        "required": false
-      },
-      {
-        "label": "Work",
-        "name": "work",
-        "widget": "relation",
-        "collection": "work",
-        "searchFields": ["genre", "title"],
-        "valueField": "id",
-        "displayFields": ["genre", "title"],
-        "multiple": false,
-        "required": false
-      },
-      {
-        "label": "Artists and Contributors",
-        "name": "contributors",
-        "widget": "list",
-        "allow_add": true,
-        "fields": [
-          {
-            "name": "contributor_role",
-            "label": "Role",
-            "widget": "select",
-            "options": [
-              "Artist",
-              "Composer",
-              "Conductor",
-              "Musician",
-              "Performer",
-              "Performing Group",
-              "Recording Engineer",
-              "Vocalist",
-              "Writer"
-            ]
-          },
-          {
-            "name": "contributor",
-            "label": "Contributor",
-            "widget": "relation",
-            "collection": "agent",
-            "searchFields": [
-              "name"
-            ],
-            "valueField": "id",
-            "displayFields": [
-              "name"
-            ],
-            "required": false
-          }
-        ]
       }
     ]
   },
