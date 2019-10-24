@@ -24,11 +24,11 @@
       </div>
       <div class="field-row row">
         <div class="field-label two columns">Genre: </div>
-        <div class="field-value ten columns"><g-link :to="$url($page.item.genre.path)">{{$page.item.genre.name | $page.item.genre.name_ar}}</g-link></div>
+        <div class="field-value ten columns"><g-link :to="$page.item.genre.path">{{$page.item.genre.name}} | {{$page.item.genre.name_ar}}</g-link></div>
       </div>
       <div class="field-row row">
         <div class="field-label two columns">Maqam: </div>
-        <div class="field-value ten columns"><g-link :to="$url($page.item.maqam.path)">{{$page.item.maqam.name | $page.item.maqam.name_ar}}</g-link></div>
+        <div class="field-value ten columns"><g-link :to="$page.item.maqam.path">{{$page.item.maqam.name}} | {{$page.item.maqam.name_ar}}</g-link></div>
       </div>
       <div class="field-row row">
         <div class="field-label two columns">Artists and Contributors: </div>
@@ -41,22 +41,23 @@
         </div>
       </div>
       <div class="field-row row">
-        <div class="field-label two columns">Artists and Contributors: </div>
-        <div class="field-value ten columns">
-          <ul>
-            <li v-for="agent in $page.item.agents" v-bind:key="agent.id">
-              {{get_agent_role(agent.id)}}: <g-link :to="agent.path" class="title">{{agent.name}} | {{agent.name_ar}}</g-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="field-row row">
         <div class="field-label two columns">Citations: </div>
         <div class="field-value ten columns">
           <Citations :citations="$page.item.citations" />
         </div>
       </div>
-
+      <div class="field-row row">
+        <div class="field-label row">Work appears on: </div>
+        <div class="field-value container" v-for="edge in appears_in.edges" :key="edge.node.id" >
+          <div class="appears-in-release-title row" style="display: block;  width: 100%;">
+            <a :href="$url('release/' + edge.node.id)">{{edge.node.title}}</a>
+          </div>
+          <div class="label row" style="display: block; width: 100%;">
+            <span class="appears-in-label-name">{{edge.node.label.name}}</span>
+            <span class="appears-in-catalogue-numbers "> {{ edge.node.catalogue_numbers.join(' / ') }} </span>
+          </div>
+        </div>
+      </div>
     </div>
   </Layout>
 </template>
@@ -92,6 +93,22 @@ query Work ($id: ID!) {
       citation_comment
       citation_reference
     }
+    appears_in:belongsTo{
+      edges{
+        node{
+          ... on Release {
+            id
+            title
+            label {
+              id
+              name
+              path
+            }
+            catalogue_numbers
+          }
+        }
+      }
+    }
   }
 }
 </page-query>
@@ -110,7 +127,8 @@ export default {
   data () {
     return {
       "collections": collections,
-      "node": {}
+      "node": {},
+      "appears_in": {}
     }
   },
   methods: {
@@ -122,55 +140,6 @@ export default {
           return collection;
         };
       };
-    },
-    relation_simple_fields(){
-      
-      rel_fields = [];
-
-      for (field_index in collection.fields){
-        field = collection.fields[field_index]
-        if (field.widget == 'relation'){
-          rel_fields.push(field);
-        }
-      };
-
-      return rel_fields;
-
-    },
-    relation_list_fields(collection){
-  
-      rel_fields = [];
-
-      for (field_index in collection.fields){
-        if (field.widget == 'list'
-        && field.hasOwnProperty('field') 
-        && field['field'].widget == 'relation'){
-          nested_field = field['field'];
-          rel_fields.push(nested_field);
-        }
-      }
-      
-      return rel_fields;
-
-    },
-    relation_object_fields(collection){
-  
-      rel_fields = [];
-
-      for (field_index in collection.fields){
-        if (field.widget == 'list'
-        && field.hasOwnProperty('fields')){
-          for (sub_index in field.fields){
-            nested_field = field.fields[sub_index]
-            if (nested_field.widget == 'relation'){
-              rel_fields.push(nested_field);
-            }
-          }
-        }
-      }
-      
-      return rel_fields;
-
     },
     async fetch_complex_relation (node, fieldname){
           
@@ -228,13 +197,11 @@ export default {
 
         return node;
       },
-      get_agent_role(agent_id){
-        for (const c_index in this.$page.item.contributors){
-          const c = this.$page.item.contributors[c_index]
-          if (c.contributor === agent_id){
-            return c.contributor_role
-          } 
-        }
+      async fetch_appears(work_id){
+
+        const result = await this.$fetch(`/work/${work_id}/appears_in`);
+
+        return result
       }
   },
   async mounted () {
@@ -246,6 +213,11 @@ export default {
 
       this.node = node
 
+      const appears_in_result = await this.fetch_appears(this.$page.item.id)
+      const appears_in = appears_in_result.data['appears_in']
+
+      this.appears_in = appears_in
+
     } catch (error) {
       console.log(error)
     }
@@ -255,5 +227,15 @@ export default {
 </script>
 
 <style>
+
+span.appears-in-label-name {
+  font-size: 1rem;
+  color: #555555;
+}
+
+span.appears-in-catalogue-numbers {
+  font-size: 0.9rem;
+  color: #777777;
+}
 
 </style>

@@ -57,7 +57,6 @@ plugins.push(
 
 
 module.exports = {
-  chainWebpack: config => config.mode('development'),
   siteName: 'Nahdapedia',
   siteDescription: 'The open database cataloguing Egyptian artists and recordings of the Nahda era.',
   siteUrl: '',
@@ -84,6 +83,17 @@ module.exports = {
         name: 'appears_in',
         path: '/agent/:id/appears_in',
         component: './src/templates/AgentAppearsIn.vue'
+      }
+    ],
+    Work: [
+      {
+        path: '/work/:id',
+        component: './src/templates/Work.vue'
+      },
+      {
+        name: 'appears_in',
+        path: '/work/:id/appears_in',
+        component: './src/templates/WorkAppearsIn.vue'
       }
     ]
   }
