@@ -15,7 +15,7 @@
         <div class="field-value ten columns">{{$page.item.name_ar}}</div>
       </div>
       <div class="field-row row">
-        <div class="field-label two columns">Works in this maqam: </div>
+        <div class="field-label two columns">Works belonging to this genre: </div>
         <div class="field-value ten columns">
           <ul class="works-list">
             <li v-for="work in $page.item.works.edges" :key="work.node.id" >

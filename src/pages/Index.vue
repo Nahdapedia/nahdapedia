@@ -73,15 +73,12 @@ export default {
           
           var collection_metadata = this.find_collection_data(node.type);
 
-          console.log(collection_metadata)
-
           var field = collection_metadata.object_refs[fieldname]
 
           const related_content_type = field.relation
           const fk_field = field.fk
           const additional_fields = field.additional_fields
-
-
+          
           const node_id = node.id;
           
           var node_field_value = node[fieldname]
