@@ -23,6 +23,4 @@ Being an open source endeavour, and for the sake of a more lasting preservation,
 The project is expected to be of great interest to musicians, authors, academics, archivists, record collectors and listeners interested in Egyptian music at the turn of the century.
 
 ### How can I get involved?
-This is still a nascent project and the website and the underlying data framework are still undergoing rapid changes and should be considered "unstable".  
-Please keep your eye on this space as we publish instructions on how to contribute to the project.
-
+This is still a nascent project and the website and the underlying data framework are still undergoing rapid changes and should be considered "unstable". Please keep your eye on this space as we publish instructions on how to contribute to the project.
