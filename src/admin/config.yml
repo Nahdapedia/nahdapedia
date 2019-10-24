@@ -6,13 +6,16 @@ media_folder: "static/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "posts"
+  - name: "post"
     label: "Posts"
     label_singular: "Post"
     folder: "static/post"
     create: true
-    slug: "{{fields.language}}/{{slug}}"
+    slug: "{{slug}}"
+    identifier_field: "title"
     fields:
+      - {label: "id", name: "id", widget: "uuid"}
+      - {label: "type", name: "type", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Excerpt", name: "excerpt", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "date"}

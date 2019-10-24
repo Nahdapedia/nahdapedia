@@ -8,30 +8,6 @@ const collections = require("./src/admin/collections.json")
 
 plugins = []
 
-plugins.push(
-  {
-    use: '@gridsome/source-filesystem',
-    options: {
-      path: 'content/posts/**/*.md',
-      typeName: 'Post',
-      route: '/blog/:slug',
-      remark: {
-        plugins: [
-          // ...local plugins
-        ]
-          
-              }
-      }
-  } ,
-  {
-    use: `gridsome-plugin-netlify-cms`,
-    options: {
-      publicPath: `/admin`,
-      modulePath: `src/admin/index.js` //our customized CMS in index.js
-    }
-  }
-)
-
 
 function setup_collection_plugin(collection, index) 
 { 
@@ -55,6 +31,29 @@ function setup_collection_plugin(collection, index)
 };
 
 collections.forEach(setup_collection_plugin);
+
+plugins.push(
+  {
+    use: '@gridsome/source-filesystem',
+    options: {
+      path: 'static/post/**/*.md',
+      typeName: 'post',
+      remark: {
+        plugins: [
+          // ...local plugins
+        ]
+          
+              }
+      }
+  } ,
+  {
+    use: `gridsome-plugin-netlify-cms`,
+    options: {
+      publicPath: `/admin`,
+      modulePath: `src/admin/index.js` //our customized CMS in index.js
+    }
+  }
+)
 
 
 module.exports = {

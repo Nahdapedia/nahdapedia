@@ -98,10 +98,12 @@ query Work ($id: ID!) {
 
 <script>
 
-import collections from '~/admin/collections.json'
 import PageHeading from '@/components/PageHeading.vue'
 import WorkHeading from '@/components/WorkHeading.vue'
 import Citations from '@/components/Citations.vue'
+
+import collections from '~/admin/collections.json'
+
 
 export default {
   components: {WorkHeading, Citations},

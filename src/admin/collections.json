@@ -1,12 +1,30 @@
 [
   {
-    "name": "posts",
+    "name": "post",
     "label": "Posts",
     "label_singular": "Post",
-    "folder": "posts",
+    "folder": "static/post",
     "create": true,
     "slug": "{{slug}}",
+    "object_refs": {
+      "citations": {
+        "relation": "reference",
+        "fk": "citation_reference",
+        "additional_fields": ["footnote_number", "citation_comment"]
+      }
+    },
     "fields": [
+      {
+        "label": "id",
+        "name": "id",
+        "widget": "uuid"
+      },
+      {
+        "label": "type",
+        "name": "type",
+        "widget": "hidden",
+        "default": "page"
+      },
       {
         "label": "Title",
         "name": "title",
@@ -21,6 +39,42 @@
         "label": "Publish Date",
         "name": "date",
         "widget": "date"
+      },
+      {
+        "name": "language",
+        "label": "Language",
+        "widget": "select",
+        "required": true,
+        "options": ["en", "ar"],
+        "default": "en"
+      },
+      {
+        "label": "Citations",
+        "name": "citations",
+        "widget": "list",
+        "allow_add": true,
+        "required": false,
+        "fields": [
+          {
+            "name": "footnote_number",
+            "label": "Footnote number",
+            "widget": "number"
+          },
+          {
+            "name": "citation_comment",
+            "label": "Citation Comment",
+            "widget": "text"
+          },
+          {
+            "name": "citation_reference",
+            "label": "Citation Reference",
+            "widget": "relation",
+            "collection": "reference", 
+            "searchFields": ["title", "bibtex"],
+            "valueField": "id",
+            "displayFields": ["title"]
+          }
+        ]
       },
       {
         "label": "Body",
