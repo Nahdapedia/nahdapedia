@@ -57,6 +57,7 @@ plugins.push(
 
 
 module.exports = {
+  chainWebpack: config => config.mode('development'),
   siteName: 'Nahdapedia',
   siteDescription: 'The open database cataloguing Egyptian artists and recordings of the Nahda era.',
   siteUrl: '',

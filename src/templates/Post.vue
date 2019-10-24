@@ -1,19 +1,19 @@
 <template>
   <Layout>
-    <section class="items">
+    <section class="posts">
       <div class="post-title index-page-title">
-        <h1>{{$static.item.title}}</h1>
+        <h1>{{$page.item.title}}</h1>
       </div>
       <div class="post-content index-page-content">
-        <p v-html="$static.item.content" />
+        <p v-html="$page.item.content" />
       </div>
     </section>
   </Layout>
 </template>
 
-<static-query>
-query Post {
-   item: post (id: "c5965f8f-52e6-4124-84e8-2bebc8a4bc5c") {
+<page-query>
+query Post {($id:ID)
+   item: post (id: $id) {
     type
     title
     excerpt
@@ -27,18 +27,4 @@ query Post {
     path
   }
 }
-</static-query>
-
-<style>
-.post-citations{
-  margin-top: 45px;
-}
-
-</style>
-
-
-
-<script>
-
-
-</script>
+</page-query>
