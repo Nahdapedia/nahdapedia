@@ -1,15 +1,15 @@
 {
-  "genre": "7152de08-2528-4a7a-a77a-acdedd8bb285",
-  "lyrics": "",
+  "id": "266896be-1acd-424e-88c3-71bf8c1adbe3",
+  "type": "work",
   "title": "Fel Bo'd yama",
+  "title_ar": "في البعد ياما",
+  "lyrics": "",
+  "genre": "7152de08-2528-4a7a-a77a-acdedd8bb285",
+  "maqam": "b7b2ec33-ae6b-4546-80cc-010cc73fda84",
   "contributors": [
     {
-      "contributor_role": "Composer",
-      "contributor": "0680d88d-cef6-4ac4-9445-d47d1d24cc2e"
+      "contributor": "0680d88d-cef6-4ac4-9445-d47d1d24cc2e",
+      "contributor_role": "Composer"
     }
-  ],
-  "title_ar": "في البعد ياما",
-  "type": "work",
-  "id": "266896be-1acd-424e-88c3-71bf8c1adbe3"
+  ]
 }
-
