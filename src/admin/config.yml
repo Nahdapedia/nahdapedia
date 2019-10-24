@@ -43,6 +43,13 @@ collections:
          displayFields: ["name"],
          multiple: false
          }
+      - {label: "Maqam", name: "maqam", widget: "relation",
+         collection: "maqam", 
+         searchFields: ["name", "name_ar"],
+         valueField: "id",
+         displayFields: ["name", "name_ar"],
+         multiple: false
+         }
       - {label: "Contributors",
          name: "contributors",
          widget: "list",
