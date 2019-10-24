@@ -5,7 +5,7 @@
         <h1>{{$static.item.title}}</h1>
       </div>
       <div class="post-content index-page-content">
-        <p v-html="$static.item.content" />
+        <div v-html="$static.item.content" />
       </div>
     </section>
   </Layout>
