@@ -39,13 +39,6 @@ query Post {
 
 
 <script>
-import Citations from '@/components/Citations.vue'
 
-import collections from '~/admin/collections.json'
 
-export default {
-  components: {
-    Citations
-  }
-};
 </script>
