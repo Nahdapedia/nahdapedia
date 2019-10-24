@@ -33,3 +33,13 @@ query Reference ($id: ID!) {
 <style>
 
 </style>
+
+<script>
+
+import PageHeading from '@/components/PageHeading.vue'
+
+export default {
+  components: {PageHeading}
+}
+
+</script>
