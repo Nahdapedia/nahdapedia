@@ -454,6 +454,12 @@
         "widget": "string"
       },
       {
+        "label": "Date of Release",
+        "name": "date",
+        "widget": "string",
+        "required": false
+      },
+      {
         "label": "Label",
         "name": "label",
         "widget": "relation",

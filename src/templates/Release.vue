@@ -16,6 +16,10 @@
         <div class="field-value ten columns">{{$page.item.title_ar}}</div>
       </div>
       <div class="field-row row">
+        <div class="field-label two columns">Release Date: </div>
+        <div class="field-value ten columns">{{$page.item.date}}</div>
+      </div>
+      <div class="field-row row">
         <div class="field-label two columns">Media type: </div>
         <div class="field-value ten columns">{{$page.item.media_type}}</div>
       </div>
@@ -116,6 +120,8 @@ query Release ($id: ID!) {
     id
     type
     title
+    title_ar
+    date
     record_count
     artist {
         id

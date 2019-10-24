@@ -20,7 +20,10 @@ The project aims to achieve this mission in a collective open-source endeavour w
 
 Being an open source endeavour, and for the sake of a more lasting preservation, the underlying data will be freely available in an online code repository under an appropriate open source license, which will be outlined soon. The data can thus be easily "cloned" or "forked" by any interested individual, and it will not be owned by any single person or organization.
 
-The project is expected to be of great interest to musicians, authors, academics, archivists, record collectors and listeners interested in Egyptian music at the turn of the century.
+The project is expected to be a reference for musicians, authors, academics, archivists, record collectors and listeners interested in Egyptian music at the turn of the century by providing complete, accurate, and referenceable data.
+
+### Goals
+
 
 ### How can I get involved?
 This is still a nascent project and the website and the underlying data framework are still undergoing rapid changes and should be considered "unstable". Please keep your eye on this space as we publish instructions on how to contribute to the project.

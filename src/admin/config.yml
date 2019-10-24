@@ -216,6 +216,7 @@ collections:
       - {label: "type", name: "type", widget: "hidden", default: "release"}
       - {label: "Title of Release", name: "title", widget: "string"}
       - {label: "Title of Release (Ar)", name: "title_ar", widget: "string"}
+      - {label: "Date of Release", name: "date", widget: "string", required: false}
       - {label: "Label", name: "label",  widget: "relation",
          collection: "label", 
          searchFields: ["name"],

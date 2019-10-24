@@ -126,14 +126,10 @@ export default {
 
     let vm = this;
 
-
     const result = await this.fetch_appears(vm.$page.item.id)
     
     const appears_in = result.data['appears_in']
     
-    console.log(result)
-    console.log(appears_in)
-
     vm.appears_in = appears_in
 
   }
