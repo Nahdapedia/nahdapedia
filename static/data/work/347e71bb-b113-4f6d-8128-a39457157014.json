@@ -3,6 +3,7 @@
     "Kādnī el-hawa"
   ],
   "genre": "7152de08-2528-4a7a-a77a-acdedd8bb285",
+  "maqam": "b2ee4ae7-ff00-4edc-911f-7b767b2db1c0",
   "citations": [
     {
       "footnote_number": 1,
@@ -14,8 +15,8 @@
   "title": "Kadni el-hawa",
   "contributors": [
     {
-      "contributor_role": "Composer",
-      "contributor": "0680d88d-cef6-4ac4-9445-d47d1d24cc2e"
+      "contributor": "0680d88d-cef6-4ac4-9445-d47d1d24cc2e",
+      "contributor_role": "Composer"
     }
   ],
   "title_ar": "كادني الهوا",
